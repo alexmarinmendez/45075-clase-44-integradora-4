@@ -1,9 +1,11 @@
 import express from 'express'
 import router from './routers/pizza.router.js'
 import mongoose from 'mongoose'
+import { loggerHttp } from './logger.js'
 
 const app = express()
 app.use(express.json())
+app.use(loggerHttp)
 
 app.use('/api/pizza', router)
 app.use('/', (req, res) => res.json({ status: 'ok' }))

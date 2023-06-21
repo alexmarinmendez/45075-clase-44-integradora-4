@@ -1,4 +1,5 @@
 import PizzaModel from "../models/pizza.model.js"
+import { logger } from '../logger.js'
 
 export default class PizzaService {
     
@@ -14,6 +15,7 @@ export default class PizzaService {
         try {
             return await PizzaModel.create(object)
         } catch (err) {
+            logger.error(err.message)
             return {}
         }
     }
