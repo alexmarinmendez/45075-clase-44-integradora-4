@@ -1,0 +1,7 @@
+paths:
+  /api/pizza:
+    get:
+      summary: 'Devuelve todas las pizzas'
+      responses:
+        "200":
+          description: 'Se devolvieron las pizzas correctamente'
